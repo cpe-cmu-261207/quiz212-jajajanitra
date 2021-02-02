@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 function App() {
   const persons = [
     {
@@ -11,15 +13,17 @@ function App() {
       age: "20"
     }
   ];
+  const [count, setCount] = useState(0);
+
   return (
     <div class="ml-2">
       {/* Code me please! */}
       <div class="mb-4">
         <h3 class="title is-3">ID Counter</h3>
-        <p>YOUR ID HERE</p>
-        <button>-</button>
-        <button>reset</button>
-        <button>+</button>
+        <p>{count}</p>
+        <button onClick={() => setCount(count - 1)}>-</button>
+        <button onClick={() => setCount()}>reset</button>
+        <button onClick={() => setCount(count + 1)}>+</button>
       </div>
 
       {/* Convert me to a component! */}
